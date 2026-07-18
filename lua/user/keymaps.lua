@@ -77,6 +77,11 @@ keymap("i", "<D-w>", "<ESC>:Bdelete<CR>", opts)
 
 -- Quick open (file picker like Cmd+P)
 keymap("n", "<D-p>", ":Telescope find_files<CR>", opts)
+keymap("i", "<D-p>", "<ESC>:Telescope find_files<CR>", opts)
+
+-- Quick open alternative (Ctrl+P - may conflict with shell)
+keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
+keymap("i", "<C-p>", "<ESC>:Telescope find_files<CR>", opts)
 
 -- Command palette like Cmd+Shift+O (to avoid conflict with Ghostty)
 keymap("n", "<D-O>", ":Telescope commands<CR>", opts)
@@ -84,6 +89,18 @@ keymap("n", "<D-O>", ":Telescope commands<CR>", opts)
 -- Search in files like Cmd+F
 keymap("n", "<D-f>", ":Telescope live_grep<CR>", opts)
 keymap("v", "<D-f>", ":Telescope live_grep<CR>", opts)
+
+-- Find and replace like Cmd+H
+keymap("n", "<D-h>", ":%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>", opts)
+keymap("v", "<D-h>", ":s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>", opts)
+
+-- Select next occurrence like Cmd+D
+keymap("n", "<D-d>", "*N", opts)
+keymap("n", "<D-d>", "viw<ESC>/<C-r><C-w><CR>N", opts)
+
+-- Select all occurrences like Cmd+Shift+L
+keymap("n", "<D-S-l>", ":<C-u>%s/<C-r><C-w>//g<Left><Left>", opts)
+keymap("v", "<D-S-l>", ":s/<C-r>//<C-r>//g<Left><Left>", opts)
 
 -- Toggle terminal like Cmd+`
 keymap("n", "<D-`>", ":ToggleTerm<CR>", opts)

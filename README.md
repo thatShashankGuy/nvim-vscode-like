@@ -21,13 +21,17 @@ nvim +'PackerSync' +qa
 | `Cmd+S` | Save |
 | `Cmd+W` | Close buffer |
 | `Cmd+P` | Quick open (file picker) |
+| `Ctrl+P` | Quick open (alternative, may conflict with shell history) |
 | `Cmd+Shift+O` | Command palette |
 | `Cmd+F` | Search in files |
+| `Cmd+Shift+F` | Format document |
+| `Cmd+H` | Find and replace |
 | `Cmd+B` | Toggle file explorer |
+| `Cmd+D` | Select next occurrence of word |
+| `Cmd+Shift+L` | Select all occurrences of word |
 | `Cmd+'` | Go to definition |
 | `Cmd+Shift+'` | Find references |
 | `Cmd+R` | Rename symbol |
-| `Cmd+Shift+F` | Format document |
 | `Cmd+/` | Toggle comment |
 | `Cmd+Shift+G` | Git diff view |
 | `Cmd+K Z` | Zen mode |
