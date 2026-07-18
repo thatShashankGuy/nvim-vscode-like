@@ -49,6 +49,96 @@ nvim +'PackerSync' +qa
 | `Alt+J/K` | Move line up/down |
 | `jk/kj` | Exit insert mode |
 
+## Native Vim Keybindings
+
+### Normal Mode
+
+| Key | Action |
+|-----|--------|
+| `h/j/k/l` | Navigate left/down/up/right |
+| `w` | Next word |
+| `b` | Previous word |
+| `e` | End of word |
+| `0` | Beginning of line |
+| `$` | End of line |
+| `gg` | First line |
+| `G` | Last line |
+| `/{pattern}` | Search forward |
+| `?{pattern}` | Search backward |
+| `n` | Next search match |
+| `N` | Previous search match |
+| `yy` | Yank (copy) line |
+| `yiw` | Yank inner word |
+| `yaw` | Yank word with trailing space |
+| `p` | Paste after cursor |
+| `P` | Paste before cursor |
+| `x` | Delete character |
+| `dd` | Delete (cut) line |
+| `dw` | Delete word |
+| `d$` | Delete to end of line |
+| `u` | Undo |
+| `Ctrl+r` | Redo |
+| `.` | Repeat last command |
+| `>>` | Indent line |
+| `<<` | Dedent line |
+| `==` | Auto-indent line |
+| `%` | Jump to matching bracket |
+| `zz` | Center cursor |
+| `zt` | Top cursor |
+| `zb` | Bottom cursor |
+
+### Visual Mode
+
+| Key | Action |
+|-----|--------|
+| `v` | Enter visual mode (character) |
+| `V` | Enter visual mode (line) |
+| `Ctrl+v` | Enter visual block mode |
+| `y` | Yank selection |
+| `d` | Delete (cut) selection |
+| `p` | Paste over selection |
+| `c` | Change selection |
+| `u` | Lowercase selection |
+| `U` | Uppercase selection |
+| `>` | Indent selection |
+| `<` | Dedent selection |
+
+### Insert Mode
+
+| Key | Action |
+|-----|--------|
+| `i` | Enter insert mode |
+| `a` | Enter insert mode after cursor |
+| `A` | Enter insert mode at end of line |
+| `I` | Enter insert mode at beginning of line |
+| `o` | New line below |
+| `O` | New line above |
+| `jk` / `kj` | Exit insert mode |
+| `Ctrl+u` | Delete line before cursor |
+| `Ctrl+w` | Delete word before cursor |
+| `Ctrl+y` | Copy char from line above |
+| `Ctrl+e` | Copy char from line below |
+| `Ctrl+r{reg}` | Paste from register (e.g., `+` for clipboard) |
+| `Ctrl+o` | Execute one normal command, return |
+| `Ctrl+a` | Insert previously inserted text |
+| `Ctrl+t` | Indent line |
+| `Ctrl+d` | Dedent line |
+
+### Command Mode
+
+| Key | Action |
+|-----|--------|
+| `:` | Enter command mode |
+| `:w` | Save |
+| `:q` | Quit |
+| `:wq` / `:x` | Save and quit |
+| `:q!` | Force quit |
+| `:e {file}` | Open file |
+| `:r {file}` | Insert file content |
+| `:%s/old/new/g` | Replace all |
+| `:set number` | Show line numbers |
+| `:set hlsearch` | Highlight searches |
+
 ### Which-Key Groups
 
 | Prefix | Action |
