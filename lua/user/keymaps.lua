@@ -1,14 +1,11 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
--- Shorten function name
 local keymap = vim.keymap.set
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Leader key (use \\ so Cmd+\ works as secondary)
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
 
 -- Modes
 --   normal_mode = "n",
@@ -63,8 +60,63 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- VS Code-style keybindings (Cmd on macOS) --
+-- Save
+keymap("n", "<D-s>", ":w<CR>", opts)
+keymap("i", "<D-s>", "<ESC>:w<CR>a", opts)
+keymap("v", "<D-s>", "<ESC>:w<CR>", opts)
+
+-- Close buffer
+keymap("n", "<D-w>", ":Bdelete<CR>", opts)
+keymap("i", "<D-w>", "<ESC>:Bdelete<CR>", opts)
+
+-- Quick open (file picker like Cmd+P)
+keymap("n", "<D-p>", ":Telescope find_files<CR>", opts)
+
+-- Command palette like Cmd+Shift+P
+keymap("n", "<D-P>", ":Telescope commands<CR>", opts)
+
+-- Search in files like Cmd+F
+keymap("n", "<D-f>", ":Telescope live_grep<CR>", opts)
+keymap("v", "<D-f>", ":Telescope live_grep<CR>", opts)
+
+-- Toggle terminal like Cmd+`
+keymap("n", "<D-`>", ":ToggleTerm<CR>", opts)
+keymap("i", "<D-`>", "<ESC>:ToggleTerm<CR>", opts)
+
+-- Toggle file explorer like Cmd+B
+keymap("n", "<D-b>", ":NvimTreeToggle<CR>", opts)
+keymap("i", "<D-b>", "<ESC>:NvimTreeToggle<CR>", opts)
+
+-- Toggle comment like Cmd+/
+keymap("n", "<D-/>", ":Commentary<CR>", opts)
+keymap("v", "<D-/>", ":Commentary<CR>", opts)
+keymap("i", "<D-/>", "<ESC>:Commentary<CR>", opts)
+
+-- Go to definition like Cmd+Click (or F12)
+keymap("n", "<D-d>", ":lua vim.lsp.buf.definition()<CR>", opts)
+
+-- Find references like Shift+F12
+keymap("n", "<D-S-d>", ":lua vim.lsp.buf.references()<CR>", opts)
+
+-- Rename like F2
+keymap("n", "<D-r>", ":lua vim.lsp.buf.rename()<CR>", opts)
+
+-- Format document like Shift+Alt+F
+keymap("n", "<D-Shift-f>", ":lua vim.lsp.buf.format({ async = true })<CR>", opts)
+keymap("i", "<D-Shift-f>", "<ESC>:lua vim.lsp.buf.format({ async = true })<CR>a", opts)
+
+-- Zen mode like Cmd+K Z
+keymap("n", "<D-k><D-z>", ":ZenMode<CR>", opts)
+
+-- Git status like Cmd+Shift+G
+keymap("n", "<D-S-g>", ":lua require('vgit').toggle()<CR>", opts)
+
+-- Bracket matching like Cmd+Shift+\ (VS Code original)
+keymap("n", "<D-\\>", ":try | silent! normal! % | catch | endtry<CR>", opts)
 

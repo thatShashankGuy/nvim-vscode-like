@@ -94,7 +94,6 @@ local mappings = {
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   p = {
     name = "Packer",
@@ -126,6 +125,20 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
+    v = { "<cmd>lua require('vgit').toggle()<cr>", "VGit Diff View" },
+  },
+
+  z = {
+    name = "Zen/Zoodle",
+    z = { "<cmd>ZenMode<cr>", "Zen Mode" },
+    t = { "<cmd>Twilight<cr>", "Twilight" },
+  },
+
+  m = {
+    name = "Minimap",
+    m = { "<cmd>CodewindowMinimize<cr>", "Minimize" },
+    M = { "<cmd>CodewindowMaximize<cr>", "Maximize" },
+    t = { "<cmd>CodewindowToggle<cr>", "Toggle" },
   },
 
   l = {

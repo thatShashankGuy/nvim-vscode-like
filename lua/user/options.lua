@@ -36,6 +36,10 @@ local options = {
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
+
+  -- Auto-save (VS Code-like)
+  autowrite = true,                        -- auto-save when switching buffers or leaving insert mode
+  autowriteall = false,                    -- only autowrite for some commands
 }
 
 for k, v in pairs(options) do

@@ -20,8 +20,8 @@ local diagnostics = {
 local diff = {
 	"diff",
 	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	symbols = { added = " ", modified = " ", removed = " " },
+	cond = hide_in_width
 }
 
 local mode = {
@@ -48,7 +48,6 @@ local location = {
 	padding = 0,
 }
 
--- cool function for progress
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
@@ -62,6 +61,14 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local navic = function()
+	local ok, navic = pcall(require, "nvim-navic")
+	if not ok or not navic.is_available() then
+		return ""
+	end
+	return navic.get_location()
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -70,12 +77,12 @@ lualine.setup({
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
+		globalstatus = true,
 	},
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = {},
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_c = { navic },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress },

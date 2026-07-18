@@ -1,8 +1,8 @@
 vim.cmd [[
   augroup _general_settings
     autocmd!
-    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
+    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
+    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
   augroup end
@@ -21,7 +21,7 @@ vim.cmd [[
 
   augroup _auto_resize
     autocmd!
-    autocmd VimResized * tabdo wincmd = 
+    autocmd VimResized * tabdo wincmd =
   augroup end
 
   augroup _alpha
@@ -30,8 +30,18 @@ vim.cmd [[
   augroup end
 ]]
 
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
+-- Autoformat on save (VS Code-like)
+vim.cmd [[
+  augroup _lsp
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })
+  augroup end
+]]
+
+-- Auto-save on insert leave and buffer change
+vim.cmd [[
+  augroup _auto_save
+    autocmd!
+    autocmd InsertLeave,TextChanged,BufLeave * silent! wall
+  augroup end
+]]
