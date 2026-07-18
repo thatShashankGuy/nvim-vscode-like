@@ -21,11 +21,11 @@ nvim +'PackerSync' +qa
 | `Cmd+S` | Save |
 | `Cmd+W` | Close buffer |
 | `Cmd+P` | Quick open (file picker) |
-| `Cmd+Shift+P` | Command palette |
+| `Cmd+Shift+O` | Command palette |
 | `Cmd+F` | Search in files |
 | `Cmd+B` | Toggle file explorer |
-| `Cmd+D` | Go to definition |
-| `Cmd+Shift+D` | Find references |
+| `Cmd+'` | Go to definition |
+| `Cmd+Shift+'` | Find references |
 | `Cmd+R` | Rename symbol |
 | `Cmd+Shift+F` | Format document |
 | `Cmd+/` | Toggle comment |

@@ -78,8 +78,8 @@ keymap("i", "<D-w>", "<ESC>:Bdelete<CR>", opts)
 -- Quick open (file picker like Cmd+P)
 keymap("n", "<D-p>", ":Telescope find_files<CR>", opts)
 
--- Command palette like Cmd+Shift+P
-keymap("n", "<D-P>", ":Telescope commands<CR>", opts)
+-- Command palette like Cmd+Shift+O (to avoid conflict with Ghostty)
+keymap("n", "<D-O>", ":Telescope commands<CR>", opts)
 
 -- Search in files like Cmd+F
 keymap("n", "<D-f>", ":Telescope live_grep<CR>", opts)
@@ -98,11 +98,11 @@ keymap("n", "<D-/>", ":Commentary<CR>", opts)
 keymap("v", "<D-/>", ":Commentary<CR>", opts)
 keymap("i", "<D-/>", "<ESC>:Commentary<CR>", opts)
 
--- Go to definition like Cmd+Click (or F12)
-keymap("n", "<D-d>", ":lua vim.lsp.buf.definition()<CR>", opts)
+-- Go to definition (using Cmd+')
+keymap("n", "<D-'>", ":lua vim.lsp.buf.definition()<CR>", opts)
 
--- Find references like Shift+F12
-keymap("n", "<D-S-d>", ":lua vim.lsp.buf.references()<CR>", opts)
+-- Find references (using Cmd+Shift+')
+keymap("n", "<D-S-'>", ":lua vim.lsp.buf.references()<CR>", opts)
 
 -- Rename like F2
 keymap("n", "<D-r>", ":lua vim.lsp.buf.rename()<CR>", opts)
