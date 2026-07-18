@@ -94,6 +94,8 @@ nvim +'PackerSync' +qa
 | `v` | Enter visual mode (character) |
 | `V` | Enter visual mode (line) |
 | `Ctrl+v` | Enter visual block mode |
+| `o` | Go to other end of selection |
+| `O` | Go to other end (block mode - other corner) |
 | `y` | Yank selection |
 | `d` | Delete (cut) selection |
 | `p` | Paste over selection |
@@ -102,6 +104,31 @@ nvim +'PackerSync' +qa
 | `U` | Uppercase selection |
 | `>` | Indent selection |
 | `<` | Dedent selection |
+
+### Visual Mode Navigation
+
+| Key | Action |
+|-----|--------|
+| `h/j/k/l` | Navigate left/down/up/right |
+| `w/b` | Next/previous word |
+| `}/{/` | Next/previous paragraph |
+| `gg/G` | Go to top/bottom of file |
+| `n/N` | Next/previous search match |
+
+### Visual Mode Text Objects
+
+| Key | Action |
+|-----|--------|
+| `vi{` | Select inside `{}` |
+| `va{` | Select including `{}` |
+| `vi(` / `va(` | Select inside/including `()` |
+| `vi[` / `va[` | Select inside/including `[]` |
+| `vi<` / `va<` | Select inside/including `<>` |
+| `vi"` | Select inside double quotes |
+| `vi'` | Select inside single quotes |
+| `viw` | Select word |
+| `vip` | Select paragraph |
+| `v2j` | Select current + 2 lines down | |
 
 ### Insert Mode
 
