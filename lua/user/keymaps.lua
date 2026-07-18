@@ -51,13 +51,7 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
--- VS Code-style Copy/Cut/Paste (Ctrl+Shift+C, Ctrl+Shift+X for terminal compatibility)
-keymap("v", "<C-S-c>", '"+y', opts)  -- Copy to system clipboard
-keymap("v", "<C-S-x>", '"+d', opts)  -- Cut to system clipboard
-keymap("n", "<C-S-c>", '"+yy', opts) -- Copy line (normal mode)
-keymap("n", "<C-S-x>", '"+dd', opts) -- Cut line (normal mode)
-keymap("n", "<C-S-v>", '"+P', opts)  -- Paste before cursor (normal mode)
-keymap("i", "<C-S-v>", '<C-r><C-o>+', opts) -- Paste in insert mode
+
 
 -- Visual Block --
 -- Move text up and down
