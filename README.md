@@ -34,6 +34,42 @@ nvim +'PackerSync' +qa
 | `Cmd+\`` | Toggle terminal |
 | `Cmd+\` | Match brackets |
 
+## Leader Keybindings
+
+| Key | Action |
+|-----|--------|
+| `Space` | Leader key |
+| `Ctrl+H/J/K/L` | Navigate windows |
+| `Ctrl+Arrows` | Resize windows |
+| `Shift+L/H` | Next/Previous buffer |
+| `Alt+J/K` | Move line up/down |
+| `jk/kj` | Exit insert mode |
+
+### Which-Key Groups
+
+| Prefix | Action |
+|--------|--------|
+| `Space+a` | Alpha dashboard |
+| `Space+b` | Buffers (Telescope) |
+| `Space+e` | File explorer |
+| `Space+w` | Save |
+| `Space+q` | Quit |
+| `Space+c` | Close buffer |
+| `Space+f` | Find files |
+| `Space+F` | Find text (live_grep) |
+| `Space+g` | Git menu |
+| `Space+gs` | Lazygit |
+| `Space+gd` | Git diff |
+| `Space+gv` | VGit diff view |
+| `Space+l` | LSP menu |
+| `Space+lf` | Format |
+| `Space+lr` | Rename |
+| `Space+la` | Code action |
+| `Space+z` | Zen mode |
+| `Space+zt` | Twilight |
+| `Space+m` | Minimap menu |
+| `Space+tm` | Toggle minimap |
+
 ## Features
 
 - **Auto-save**: Files save automatically on InsertLeave and BufLeave
